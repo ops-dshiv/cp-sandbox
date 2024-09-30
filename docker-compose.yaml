@@ -54,6 +54,10 @@ services:
       # - zookeeper2
       # - zookeeper3
     command: kafka-server-start /etc/kafka/server.properties
+    ports:
+      - "19092:19092"  
+      - "19093:19093"  
+      - "19094:19094"  
     environment:
       EXTRA_ARGS: -javaagent:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.18.0.jar=9101:/usr/share/jmx-exporter/kafka_broker.yml
     volumes:
@@ -74,6 +78,10 @@ services:
       # - zookeeper2
       # - zookeeper3
     command: kafka-server-start /etc/kafka/server.properties
+    ports:
+      - "29092:29092"  
+      - "29093:29093"  
+      - "29094:29094"  
     environment:
       EXTRA_ARGS: -javaagent:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.18.0.jar=9102:/usr/share/jmx-exporter/kafka_broker.yml
     volumes:
@@ -94,6 +102,10 @@ services:
       # - zookeeper2
       # - zookeeper3
     command: kafka-server-start /etc/kafka/server.properties
+    ports:
+      - "39092:39092"  
+      - "39093:39093"  
+      - "39094:39094"  
     environment:
       EXTRA_ARGS: -javaagent:/usr/share/jmx-exporter/jmx_prometheus_javaagent-0.18.0.jar=9103:/usr/share/jmx-exporter/kafka_broker.yml
     volumes:
