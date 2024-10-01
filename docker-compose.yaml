@@ -81,7 +81,7 @@ services:
     volumes:
     - ./kafka2:/etc/kafka
     - ./jmx-exporter:/usr/share/jmx-exporter
-    - kafka2data:/var/lib/kafka/data
+    # - kafka2data:/var/lib/kafka/data
     deploy:
       resources:
         limits:
@@ -251,9 +251,9 @@ services:
 volumes:
     prometheus_data: {}
     grafana_data: {}
-    kafka2data:
-      driver_opts:
-        type: tmpfs
-        o: size=3145728
-        device: tmpfs
+    # kafka2data:
+    #   driver_opts:
+    #     type: tmpfs
+    #     o: size=3145728
+    #     device: tmpfs
 

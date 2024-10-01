@@ -16,8 +16,8 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
   password="bob-secret";
 EOF
 
-kafka-topics --bootstrap-server kafka1:19092 --command-config /tmp/client.properties --create --topic domestic_orders --if-not-exists --replica-assignment 2
+kafka-topics --bootstrap-server kafka1:19092 --command-config opt/client/client.properties --create --topic clickstream --if-not-exists --replica-assignment 2
 
-for x in {1..100}; do echo $x; sleep 2; done | kafka-console-producer --bootstrap-server kafka1:19092 --producer.config /tmp/client.properties --topic domestic_orders
+for x in {1..100}; do echo $x; sleep 2; done | kafka-console-producer --bootstrap-server kafka1:19092 --producer.config /opt/client/client.properties --topic clickstream
 
 sleep infinity
